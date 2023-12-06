@@ -1,5 +1,6 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,7 +8,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.openqa.selenium.interactions.Actions;
 
+import java.security.Key;
 import java.time.Duration;
 
 
@@ -54,4 +57,15 @@ public class BaseTest {
         WebElement loginButton = getDriver().findElement(By.cssSelector("button[type='submit']"));
         loginButton.click();
     }
+public void allSongPage() {
+    WebElement allSongs = getDriver().findElement(By.cssSelector("a[href='#!/songs']"));
+    allSongs.click();
+}
+public void dClick (String css) {
+    Actions action = new Actions(driver);
+
+    WebElement link = driver.findElement(By.cssSelector(css));
+    action.doubleClick(link).perform();
+
+}
 }

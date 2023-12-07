@@ -9,6 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Parameters;
 
 import java.security.Key;
 import java.time.Duration;
@@ -27,14 +28,15 @@ public class BaseTest {
 
 
     @BeforeMethod
-    public void lunchBrowser () {
+    @Parameters({"baseUrl"})
+    public void lunchBrowser (String baseUrl) {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
 
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
-        driver.get(url);
+        driver.get(baseUrl);
     }
     @AfterMethod
     public void closeBrowser() {
@@ -66,6 +68,13 @@ public void dClick (String css) {
 
     WebElement link = driver.findElement(By.cssSelector(css));
     action.doubleClick(link).perform();
+
+}
+public void deletePlaylist () {
+        WebElement deletePlaylistButton = driver.findElement(By.cssSelector("button[class='del btn-delete-playlist']"));
+        deletePlaylistButton.click();
+        WebElement okButton = driver.findElement(By.cssSelector("button[class='ok']"));
+        okButton.click();
 
 }
 }

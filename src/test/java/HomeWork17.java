@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.time.Duration;
@@ -27,11 +29,15 @@ public void addSongToPlaylist() {
         WebElement favorites = getDriver().findElement(By.xpath("//li[contains(text(),'123')]"));
         favorites.click();
 
-            WebElement playlist123 = getDriver().findElement(By.cssSelector("a[href='#!/playlist/77229']"));
-            playlist123.click();
+            WebDriverWait wait = new WebDriverWait(getDriver(),Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[class='success show']")));
+            WebElement successShow = getDriver().findElement(By.cssSelector("div[class='success show']"));
+            Assert.assertTrue(successShow.isDisplayed());
 
-            WebElement song = getDriver().findElement(By.xpath("//*[@id=\"playlistWrapper\"]/div/div/div[1]/table/tr/td[2]"));
-            Assert.assertTrue((song.isDisplayed()));
+
+            
+
+
 
 
         //WebElement successShow = getDriver().findElement(By.cssSelector(""));

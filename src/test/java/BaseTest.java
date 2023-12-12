@@ -74,6 +74,18 @@ public void dClick (String css) {
     action.doubleClick(link).perform();
 
 }
+public void rClick (String css) {
+    Actions action = new Actions(driver);
+
+    WebElement link = driver.findElement(By.cssSelector(css));
+    action.contextClick(link).perform();
+}
+public void lClick (String css) {
+    Actions action = new Actions(driver);
+
+    WebElement link = driver.findElement(By.cssSelector(css));
+    action.click(link).perform();
+}
 public void deletePlaylist () {
         WebElement deletePlaylistButton = driver.findElement(By.cssSelector("button[class='del btn-delete-playlist']"));
         deletePlaylistButton.click();

@@ -1,37 +1,30 @@
+package com.qa.koel;
+
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.time.Duration;
-import java.util.Random;
 import java.util.UUID;
-import java.util.random.RandomGenerator;
 
 public class HomeWork21 extends BaseTest {
+    HomePage  homePage;
+
     @Test (testName = "Rename playlist")
 
     public void renamePlaylist() throws InterruptedException  {
-        loginKoel();
-        clickSubmit();
+        LoginPage loginPage = new LoginPage(getDriver());
+        loginPage.loginKoel();
+        loginPage.clickSubmit();
         String newName = UUID.randomUUID().toString();
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-        rClick("a[href=\"#!/playlist/79485\"]");
-        lClick("li[data-testid=\"playlist-context-menu-edit-79485\"]");
+        rClick("#playlists > ul > li:nth-child(4)");
+        lClick("//li[contains(text(),'Edit')]");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[data-testid='inline-playlist-name-input']")));
         WebElement playlistNameEdit = getDriver().findElement(By.cssSelector("input[data-testid='inline-playlist-name-input']"));
         for (int i=0; i<playlistNameEdit.toString().length(); i++)
@@ -40,8 +33,10 @@ public class HomeWork21 extends BaseTest {
         }
         playlistNameEdit.sendKeys(newName);
         playlistNameEdit.sendKeys(Keys.ENTER);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[class='success show']")));
-        WebElement successShow = getDriver().findElement(By.cssSelector("div[class='success show']"));
+        homePage = new HomePage(getDriver());
+
+        WebElement successShow = homePage.getSuccessShow();
+        //wait.until(ExpectedConditions.visibilityOfElementLocated();
         Assert.assertTrue(successShow.isDisplayed());
 
     }

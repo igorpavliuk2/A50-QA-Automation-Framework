@@ -1,9 +1,7 @@
+package com.qa.koel;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -13,9 +11,9 @@ public class HomeWork17 extends BaseTest {
     @Test(testName = "Add song to playlist ")
 public void addSongToPlaylist() {
 
-// NEED TO REFACTORING
-        loginKoel();
-        clickSubmit();
+        LoginPage loginPage = new LoginPage(getDriver());
+        loginPage.loginKoel();
+        loginPage.clickSubmit();
 
 
         allSongPage();

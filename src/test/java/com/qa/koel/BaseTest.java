@@ -1,3 +1,5 @@
+package com.qa.koel;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -17,7 +19,7 @@ import java.time.Duration;
 
 
 public class BaseTest {
-    public WebDriver driver = null;
+    public WebDriver driver;
 
     public String url = "https://qa.koel.app/";
 
@@ -51,18 +53,8 @@ public class BaseTest {
         return driver;
     }
 
-    public void loginKoel () {
-        WebElement emailField = getDriver().findElement(By.cssSelector("input[type='email']"));
-        emailField.sendKeys("igor.pavliuk@testpro.io");
 
-        WebElement passwordField = getDriver().findElement(By.cssSelector("input[type='password']"));
-        passwordField.sendKeys("1q2w3e4R");
-    }
 
-    public void clickSubmit() {
-        WebElement loginButton = getDriver().findElement(By.cssSelector("button[type='submit']"));
-        loginButton.click();
-    }
 public void allSongPage() {
     WebElement allSongs = getDriver().findElement(By.cssSelector("a[href='#!/songs']"));
     allSongs.click();
@@ -80,10 +72,10 @@ public void rClick (String css) {
     WebElement link = driver.findElement(By.cssSelector(css));
     action.contextClick(link).perform();
 }
-public void lClick (String css) {
+public void lClick (String xpath) {
     Actions action = new Actions(driver);
 
-    WebElement link = driver.findElement(By.cssSelector(css));
+    WebElement link = driver.findElement(By.xpath(xpath));
     action.click(link).perform();
 }
 public void deletePlaylist () {

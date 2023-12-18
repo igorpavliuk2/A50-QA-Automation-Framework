@@ -16,11 +16,6 @@ public class HomeWork18 extends BaseTest {
         WebElement song = getDriver().findElement(By.cssSelector("td[class='title']"));
         song.click();
         dClick("td[class='title']");
-
-
-
-
-
         WebElement songPlay = getDriver().findElement(By.cssSelector("div[class='plyr plyr--audio plyr--playing']"));
         Assert.assertTrue(songPlay.isDisplayed());
 

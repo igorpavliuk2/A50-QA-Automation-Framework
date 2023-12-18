@@ -34,9 +34,7 @@ public class HomeWork21 extends BaseTest {
         playlistNameEdit.sendKeys(newName);
         playlistNameEdit.sendKeys(Keys.ENTER);
         homePage = new HomePage(getDriver());
-
         WebElement successShow = homePage.getSuccessShow();
-        //wait.until(ExpectedConditions.visibilityOfElementLocated();
         Assert.assertTrue(successShow.isDisplayed());
 
     }

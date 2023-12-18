@@ -6,18 +6,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Homework16 extends BaseTest {
-    @Test
+    @Test (testName = "Registration navigation test ")
     public void registrationNavigationTest() {
-
-
 WebElement registrationField = getDriver().findElement(By.cssSelector("a[href='registration']"));
         Assert.assertTrue(registrationField.isDisplayed());
         registrationField.click();
-
 WebElement registrationPostField = getDriver().findElement(By.cssSelector("form[method='POST']"));
-
         Assert.assertTrue(registrationPostField.isDisplayed());
-
     }
-
 }

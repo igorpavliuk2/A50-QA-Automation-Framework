@@ -9,7 +9,7 @@ public class LoginTests extends BaseTest {
 
     LoginPage loginPage;
     HomePage homePage;
-    @Test
+    @Test (testName = "Login empty email test")
     public void loginEmptyEmailPassword() {
 
 
@@ -18,7 +18,7 @@ public class LoginTests extends BaseTest {
 
     }
 
-    @Test
+    @Test (testName = "Login User TEST ")
     public void loginUserTest() {
         loginPage = new LoginPage(getDriver());
         loginPage.loginKoel();

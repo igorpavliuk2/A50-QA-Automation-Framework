@@ -112,7 +112,7 @@ public void tearDown() {
             case "lambda-driver":
                 return getLambdaDriver();
             default:
-                WebDriverManager.safaridriver().setup();
+                WebDriverManager.chromedriver().setup();
                 return new SafariDriver();
         }
 

@@ -7,10 +7,10 @@
         <classes>
             <class name="com.qa.koel.LoginTests"/>
             <class name="com.qa.koel.BaseTest"/>
-            <class name="com.qa.koel.Homework16"/>
-            <class name="com.qa.koel.HomeWork18"/>
-            <class name="com.qa.koel.HomeWork19"/>
-            <class name="com.qa.koel.HomeWork21"/>
+            <class name="com.qa.koel.RegNavTest"/>
+            <class name="com.qa.koel.playSongTest"/>
+            <class name="com.qa.koel.deletePlaylistTest"/>
+            <class name="com.qa.koel.renamePlaylistTest"/>
         </classes>
     </test>
 </suite>

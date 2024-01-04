@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class HomeWork18 extends BaseTest {
+public class playSongTest extends BaseTest {
     @Test(testName = "Play Song ")
 
     public void playSong()  {

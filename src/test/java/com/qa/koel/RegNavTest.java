@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Homework16 extends BaseTest {
+public class RegNavTest extends BaseTest {
     @Test (testName = "Registration navigation test ")
     public void registrationNavigationTest() {
 WebElement registrationField = getDriver().findElement(By.cssSelector("a[href='registration']"));

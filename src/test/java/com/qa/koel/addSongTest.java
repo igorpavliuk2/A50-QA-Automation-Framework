@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.time.Duration;
-public class HomeWork17 extends BaseTest {
+public class addSongTest extends BaseTest {
     @Test(testName = "Add song to playlist ")
 public void addSongToPlaylist() {
 

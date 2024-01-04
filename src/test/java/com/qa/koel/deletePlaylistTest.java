@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class HomeWork19 extends BaseTest {
+public class deletePlaylistTest extends BaseTest {
     HomePage  homePage;
     @Test(testName = "Delete playlist")
 

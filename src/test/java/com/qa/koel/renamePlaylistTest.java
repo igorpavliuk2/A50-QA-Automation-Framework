@@ -12,7 +12,7 @@ import org.testng.Assert;
 import java.time.Duration;
 import java.util.UUID;
 
-public class HomeWork21 extends BaseTest {
+public class renamePlaylistTest extends BaseTest {
     HomePage  homePage;
 
     @Test (testName = "Rename playlist")

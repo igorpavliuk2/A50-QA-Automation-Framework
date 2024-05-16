@@ -105,8 +105,8 @@ public abstract class BaseTest {
                 capabilities.setCapability("browserName", "chrome");
                 return driver = new RemoteWebDriver(URI.create(gridUrl).toURL(), capabilities);
             default:
-                WebDriverManager.safaridriver().setup();
-                return new SafariDriver();
+                WebDriverManager.chromedriver().setup();
+                return new ChromeDriver();
         }
 
 
